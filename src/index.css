@@ -30,6 +30,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
+  padding-top: 5rem;
+  z-index: 1
 }
 
 .abcss {

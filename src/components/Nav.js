@@ -32,7 +32,7 @@ const Navbar = () => {
     setMenu(true);
   };
   return (
-    <div className=" w-full fixed  bg-[#0A192F] ">
+    <div className=" w-full fixed  bg-[#0A192F] z-40">
       <nav className=" h-[70px] text-white flex justify-between items-center px-12 cursor-pointer">
         <span className=" bg-[#132D3E] rounded-full p-2">
           <Link
