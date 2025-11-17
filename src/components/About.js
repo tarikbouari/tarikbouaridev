@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable import/no-extraneous-dependencies */
-import { GoPerson } from "react-icons/go";
-import Skill from "./Skills";
-import Accordionl from "./AccordionL";
-import Accordionf from "./AccordionF";
-import Accordiond from "./AccordionD";
+import { GoPerson } from 'react-icons/go';
+import Skill from './Skills';
+import Accordionl from './AccordionL';
+import Accordionf from './AccordionF';
+import Accordiond from './AccordionD';
 
 const About = () => (
   <div className="w-full mx-auto md:p-6 xl:p-1 abcss" id="about">
@@ -23,7 +23,7 @@ const About = () => (
             <span className="text-[#52eeca]"> own story</span>
           </h3>
           <p className="mt-4">
-            {" "}
+            {' '}
             As a Full‑Stack Developer based in France, I design and build
             user‑centered web products using modern JavaScript stacks (React,
             Node.js) and Figma, with a strong focus on accessibility,
@@ -31,14 +31,17 @@ const About = () => (
             <br />
             <br />
             Data‑oriented in approach, I use Pandas for analysis and dashboards
-            to inform product decisions. I have three years of remote, real‑world
-            experience with Microverse and additional freelance projects for
-            startups, delivering end‑to‑end development, CI/workflows, and
-            cross‑team collaboration. 
+            to inform product decisions. I have three years of remote,
+            real‑world experience with Microverse and additional freelance
+            projects for startups, delivering end‑to‑end development,
+            CI/workflows, and cross‑team collaboration.
             <br />
             <br />
-            <span className="text-[#52eeca] py-2">I’m open to opportunities</span> to work on projects that combine web
-            development, UX design, and data practices
+            <span className="text-[#52eeca] py-2">
+              I’m open to opportunities
+            </span>{' '}
+            to work on projects that combine web development, UX design, and
+            data practices
           </p>
           <Skill />
         </div>
