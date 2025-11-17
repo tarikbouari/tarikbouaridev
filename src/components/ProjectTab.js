@@ -19,7 +19,7 @@ const ProjectTab = ({ tabs = [], active, onChange }) => {
     }
   }
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center my-8">
       <nav aria-label="Filtre projets">
         <div ref={ref} style={{ display: 'flex', gap: 8 }}>
           {tabs.map((t, i) => {
@@ -39,7 +39,7 @@ const ProjectTab = ({ tabs = [], active, onChange }) => {
                   padding: '8px 12px',
                   borderRadius: 6,
                   border: '1px solid #ddd',
-                  background: isActive ? '#111' : '#f5f5f5',
+                  background: isActive ? '#132D3E' : '#f5f5f5',
                   color: isActive ? '#fff' : '#111',
                   cursor: 'pointer',
                 }}
