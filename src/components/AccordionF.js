@@ -54,6 +54,12 @@ const Accordionf = ({ titre }) => {
                 <span className="font-bold text-xs text-[#000300] text-center">Rails </span>
               </div>
             </div>
+            <div>
+              <div className="flex items-center justify-center gap-2 md:flex-col gap-2 bg-[#F7F7F9] py-2 px-4 rounded">
+                <img src={rails} alt="html-icon" className="h-[50px] w-[50px]" />
+                <span className="font-bold text-xs text-[#000300] text-center">Rails </span>
+              </div>
+            </div>
 
           </div>
         )
