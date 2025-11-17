@@ -34,7 +34,7 @@ const About = () => (
             to inform product decisions. I have three years of remote,
             real‑world experience with Microverse and additional freelance
             projects for startups, delivering end‑to‑end development,
-            CI/workflows, and cross‑team collaboration.
+            CI/workflows, and cross‑team collaboration
             <br />
             <br />
             <span className="text-[#52eeca] py-2">
