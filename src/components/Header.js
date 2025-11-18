@@ -6,8 +6,8 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
 const Header = () => (
-  <div className="flex justify-center items-center h-[100vh] md:h-[100vh] xl:h-[100vh] bnbg" id="home">
-    <div className=" mx-auto  container px-6 py-8 ">
+  <div className="flex justify-center items-center h-[100vh] md:h-[100vh]  bnbg" id="home">
+    <div className=" mx-auto  container px-6 py-8 2xl:py-16">
       <div className=" flex  mx-auto px-8 xl: ">
         <div className="text-white ">
           <h4 className="text-2xl md:text-4xl lg:text-7xl xl:text-8xl text-[#52eeca] md:mb-4 lg:mb-2">
@@ -24,7 +24,7 @@ const Header = () => (
               repeat={Infinity}
             />
           </h4>
-          <h2 className="text-2xl lg:text-7xl md:text-5xl  xl:text-9xl  ">  a Creative full-stack developer </h2>
+          <h2 className="text-2xl lg:text-7xl md:text-5xl  xl:text-8xl  ">  a Creative full-stack developer </h2>
         </div>
         <div className=" p-4 w-[20%]"> </div>
       </div>

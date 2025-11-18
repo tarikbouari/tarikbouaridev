@@ -7,7 +7,6 @@ import Accordionf from './AccordionF';
 import Accordiond from './AccordionD';
 
 const About = () => (
-
   <div className="w-full mx-auto md:p-6 xl:p-1 abcss" id="about">
     <div className="container  px-4 py-4 mt-5 mx-auto flex flex-col gap-4 xl:pt-[8rem] ">
       <div className=" flex  items-center px-12">
@@ -20,28 +19,31 @@ const About = () => (
       <div className=" lg:grid grid-cols-2  gap-4 mt-5 p-8  ">
         <div className="p-4">
           <h3 className="text-xl md:text-3xl">
-            Every  developer
-            has it
+            Every developer has it
             <span className="text-[#52eeca]"> own story</span>
           </h3>
           <p className="mt-4">
             {' '}
-            Hello!  my name is tarik bouari, i'm a fullstack developer and UI designer from Togo.
-            I have experience building digital products for startups and businesses.
+            As a Full‑Stack Developer based in France, I design and build
+            user‑centered web products using modern JavaScript stacks (React,
+            Node.js) and Figma, with a strong focus on accessibility,
+            performance, and maintainable code
             <br />
             <br />
-            My interest in web development come from my abitlity to solve problems and
-            my dedication to always bring something new and original to the table.
+            Data‑oriented in approach, I use Pandas for analysis and dashboards
+            to inform product decisions. I have three years of remote,
+            real‑world experience with Microverse and additional freelance
+            projects for startups, delivering end‑to‑end development,
+            CI/workflows, and cross‑team collaboration
             <br />
             <br />
-            For the past 2 years, I'm part of  Microverse organization where
-            I worked remotely on real world projects with
-            others developers around the world. It's was great experience for me because on top
-            of the technical skills , I gained soft professional skills such as remote-work,
-            working in a cross diverse enviroment,  Meet projects highly deadlines,
-            communicate effectively.
+            <span className="text-[#52eeca] py-2">
+              I’m open to opportunities
+            </span>
+            {' '}
+            to work on projects that combine web development, UX design, and
+            data practices
           </p>
-          <p className="text-[#76ab9e] py-2">I'm currently open for new opportunities.</p>
           <Skill />
         </div>
         <div className="flex flex-col gap-6 w-30 px-4 cursor-pointer">
@@ -51,7 +53,6 @@ const About = () => (
         </div>
       </div>
       <div className="5rem"> </div>
-
     </div>
   </div>
 );
