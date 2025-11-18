@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useRef } from 'react';
 import { MdOutlineContactMail } from 'react-icons/md';

@@ -39,7 +39,8 @@ const About = () => (
             <br />
             <span className="text-[#52eeca] py-2">
               I’m open to opportunities
-            </span>{' '}
+            </span>
+            {' '}
             to work on projects that combine web development, UX design, and
             data practices
           </p>

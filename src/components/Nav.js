@@ -12,7 +12,6 @@ const Navbar = () => {
   const handleMenu = (e) => {
     e.preventDefault();
     setMenu(!menu);
-    console.log('this is menue value', setMenu);
   };
 
   /* Use effect is for side effect through the application. ex: dom manipulation,
