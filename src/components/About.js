@@ -19,30 +19,42 @@ const About = () => (
       <div className=" lg:grid grid-cols-2  gap-4 mt-5 p-8  ">
         <div className="p-4">
           <h3 className="text-xl md:text-3xl">
-            Every developer has it
-            <span className="text-[#52eeca]"> own story</span>
+            Turning Ideas into
+            <span className="text-[#52eeca]"> Web & AI Solutions</span>
           </h3>
           <p className="mt-4">
             {' '}
-            As a Full‑Stack Developer based in France, I design and build
-            user‑centered web products using modern JavaScript stacks (React,
-            Node.js) and Figma, with a strong focus on accessibility,
-            performance, and maintainable code
+            I’m a Web Developer & AI Solutions Integrator based in France, with
+            over three years of hands‑on experience building digital products
+            for startups and small businesses. I design and develop modern web
+            applications, intelligent automation systems, and AI‑powered
+            workflows that help companies work smarter, scale faster, and
+            deliver better user experiences.
             <br />
             <br />
-            Data‑oriented in approach, I use Pandas for analysis and dashboards
-            to inform product decisions. I have three years of remote,
-            real‑world experience with Microverse and additional freelance
-            projects for startups, delivering end‑to‑end development,
-            CI/workflows, and cross‑team collaboration
+            My background includes full‑stack development (React, Next.js,
+            Node.js, Python), API integration, and intelligent automation using
+            both code and no‑code tools such as Make, n8n, and Zapier. I’ve
+            collaborated with startup founders and small business owners to
+            deliver real, production‑ready solutions — from MVPs and dashboards
+            to AI‑powered workflows and custom automation systems.
             <br />
+            <br />
+            <p>
+              {' '}
+              Today, I focus on combining web development, AI integration, and
+              automation to create solutions that bring measurable value.
+              Whether it’s improving internal workflows, developing custom
+              agents, or building complete web platforms, my goal is to help
+              companies work smarter and scale faster.
+            </p>
             <br />
             <span className="text-[#52eeca] py-2">
-              I’m open to opportunities
+              I’m open to freelance missions and opportunities
             </span>
             {' '}
-            to work on projects that combine web development, UX design, and
-            data practices
+            with startups looking to build or enhance products powered by modern
+            web technologies and AI.
           </p>
           <Skill />
         </div>

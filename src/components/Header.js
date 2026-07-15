@@ -24,12 +24,14 @@ const Header = () => (
               repeat={Infinity}
             />
           </h4>
-          <h2 className="text-2xl lg:text-7xl md:text-5xl  xl:text-8xl  ">  a Creative full-stack developer </h2>
+          <h2 className="text-2xl lg:text-7xl md:text-5xl  xl:text-8xl  ">  Web Developer & AI Solutions Integrator</h2>
         </div>
         <div className=" p-4 w-[20%]"> </div>
       </div>
       <div className="py-6 md:w-[80%] lg:w-[60%]  px-8 ">
-        <p className=" "> I love building digital products for startups and businesses to enhance brand visibility and sales growth.</p>
+        <p className=" "> I build modern web applications and intelligent automation systems to help businesses scale faster and work smarter.
+
+        </p>
       </div>
       <div className="flex flex-col gap-6">
         <Link

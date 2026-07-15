@@ -1,43 +1,44 @@
-import ahoeimg from '../images/AH0.jpg';
 import hap from '../images/gez.jpg';
-import ahoe from '../images/ahoe.jpg';
-import estate from '../images/vehii.jpg';
+import solis from '../images/solis.jpg';
+import guedzeit from '../images/guedzeit.jpg';
 
 export const data = [
   {
-    id: 'cms-1',
-    category: 'cms',
-    titre: 'NafexGlobal',
-    text: ' An ecommerce website for light and home decoration base in Accra, Nafex is specialized in providing exquisite lighting solutions that transform spaces, adding warmth, sophistication, and functionality. Designed and built using figma and WordPress   ',
-    image: ahoeimg,
-    tools: { frist: 'Wordpress', second: 'Figma', third: 'Hostinger' },
-    links: { git: 'https://github.com/', source: 'https://nafexgh.com' },
-  },
-  {
     id: 'app-1',
     category: 'apps',
-    titre: 'Vehigo',
-    text: 'A car rental app that allow users to see available car for rental. A user can add car to the car list or select his favorite. The frontend is built with react connected to a Backend API built with  rails.',
-    image: estate,
+    titre: 'Guedze IT — Commercial IT Services Platform',
+    text: 'A modern IT services platform built with Next.js, deployed on OVH, and containerized with Docker. I implemented a full CI/CD pipeline using GitHub Actions to automate build, testing, and deployment. The project delivers a clean, responsive interface presenting the company’s services and expertise in a professional way.This project demonstrates my ability to deliver a production‑ready commercial website, integrate modern DevOps practices, and collaborate with business stakeholders to translate their needs into a functional digital product.',
+    image: guedzeit,
     tools: {
-      frist: 'GitHub', second: 'react', third: 'redux', fourth: 'Rails', fith: 'API',
+      frist: 'Next.js', second: 'Docker', third: 'GitHub Actions', fourth: 'OVH Hosting', fith: 'Figma',
     },
-    links: { git: 'https://github.com/', source: 'https://ahoechic.com' },
+    links: { git: 'https://github.com/', source: 'https://guedze.com/' },
   },
   {
-    id: 'cms-2',
+    id: 'all-1',
+    category: 'all',
+    titre: 'Guedze IT — Commercial IT Services Platform',
+    text: 'A modern IT services platform built with Next.js, deployed on OVH, and containerized with Docker. I implemented a full CI/CD pipeline using GitHub Actions to automate build, testing, and deployment. The project delivers a clean, responsive interface presenting the company’s services and expertise in a professional way.This project demonstrates my ability to deliver a production‑ready commercial website, integrate modern DevOps practices, and collaborate with business stakeholders to translate their needs into a functional digital product.',
+    image: guedzeit,
+    tools: {
+      frist: 'Next.js', second: 'Docker', third: 'GitHub Actions', fourth: 'OVH Hosting', fith: 'Figma',
+    },
+    links: { git: 'https://github.com/', source: 'https://guedze.com/' },
+  },
+  {
+    id: 'app-2',
+    category: 'apps',
+    titre: 'Solis — AI Agents Platform for Solopreneurs',
+    text: 'Solis is an AI‑powered platform built with Next.js, FastAPI, and a custom LangChain agent. It helps solopreneurs structure and advance their business by automating research, preparation, and operational tasks while keeping full control over decisions.The system uses a Next.js frontend deployed on Vercel, communicating with a FastAPI backend hosted on Render . The backend orchestrates a LangChain agent to process inputs, analyze content, and generate actionable outputs.This project demonstrates my ability to build production‑ready AI applications, integrate multi‑service architectures, and design intelligent workflows that turn complex processes into simple, usable tools for real business needs.',
+    image: solis,
+    tools: {
+      frist: 'Next.js', second: 'FastAPI', third: 'LangChain', fourth: 'Vercel', fith: 'Render',
+    },
+    links: { git: 'https://github.com/tarikbouari/prospect_ia', source: 'https://solis-delta-dusky.vercel.app/' },
+  },
+  {
+    id: 'cms-1',
     category: 'cms',
-    titre: 'AhoeChic',
-    text: 'A real estate website build for ahoechic company based in Lomé,Togo. I developed a visually appealing property that showcase each property with high quality image, and detailed description. Users can easily navigatethrough the site and explore proprieties of interest ',
-    image: ahoe,
-    tools: {
-      frist: 'GitHub', second: 'react', third: 'Booststrap', fourth: 'Webpack',
-    },
-    links: { git: 'https://github.com/', source: 'https://ahoechic.com' },
-  },
-  {
-    id: 'data-1',
-    category: 'data-projet',
     titre: 'AfroTech',
     text: 'AfroTech festival is an online website for events and conferences about tech. AfroTech brings together all technology players such as startups, companies, and individuals. It also includes a conference where African business leaders and pioneers thinkers discuss the industrys most relevant issues. Afrotech is a place to share knowledge, build a growing network, exhibit the latest tech project and make business.. ',
     image: hap,
@@ -49,4 +50,4 @@ export const data = [
 
 ];
 
-export const projetCategories = ['cms', 'apps', 'data-projet'];
+export const projetCategories = ['apps', 'IA/automation', 'cms'];
