@@ -3,37 +3,28 @@ import React, { useState } from 'react';
 import { MdOutlineContactMail } from 'react-icons/md';
 import profile from '../images/f4.jpg';
 
-// 1. Colle ta clé Web3Forms ici (ou mets-la dans .env : REACT_APP_WEB3FORMS_KEY)
-const ACCESS_KEY = process.env.REACT_APP_WEB3FORMS_KEY || 'TON_ACCESS_KEY_ICI';
-
 const Contact = () => {
-  // status: 'idle' | 'sending' | 'success' | 'error'
-  const [status, setStatus] = useState('idle');
+  const [result, setResult] = useState('');
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
-    setStatus('sending');
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult('Sending....');
 
-    const formData = new FormData(e.target);
-    formData.append('access_key', ACCESS_KEY);
+    const formData = new FormData(event.target);
+    formData.append('access_key', '84097c34-6a5c-4a10-bd56-84b5e4833570');
 
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
-      });
-      const data = await res.json();
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await response.json();
 
-      if (data.success) {
-        setStatus('success');
-        e.target.reset();
-      } else {
-        console.log('Error:', data);
-        setStatus('error');
-      }
-    } catch (error) {
-      console.log('Error:', error);
-      setStatus('error');
+    if (data.success) {
+      setResult('Message sent successfully ✅');
+      event.target.reset();
+    } else {
+      console.log('Error', data);
+      setResult(data.message || 'Something went wrong. Please try again.');
     }
   };
 
@@ -46,81 +37,31 @@ const Contact = () => {
         </div>
         <div className=" flex flex-col  gap-4 py-7 ">
           <div className="flex flex-col justify-center items-center gap-2 px-8 py-8 ">
-            <img
-              src={profile}
-              alt="profile"
-              className="w-[150px] h-[150px] outline outline-2 outline-[#52eeca] rounded-full"
-            />
-            <h4 className="text-2xl xl:text-3xl md:w-[50%] text-center">
-              {' '}
-              Let’s talk about a project, collaboration or an idea you may have
-            </h4>
+            <img src={profile} alt="profile" className="w-[150px] h-[150px] outline outline-2 outline-[#52eeca] rounded-full" />
+            <h4 className="text-2xl xl:text-3xl md:w-[50%] text-center"> Let’s talk about a project, collaboration or an idea you may have</h4>
           </div>
-          <form
-            className="py-8 flex flex-col gap-4 md:w-[60%] mx-auto xl:px-8"
-            onSubmit={sendEmail}
-          >
-            {/* Optionnel : sujet et anti-spam */}
-            <input
-              type="hidden"
-              name="subject"
-              value="Nouveau message depuis ton portfolio"
-            />
-            <input
-              type="checkbox"
-              name="botcheck"
-              className="hidden"
-              style={{ display: 'none' }}
-            />
+          <form className="py-8 flex flex-col gap-4 md:w-[60%] mx-auto xl:px-8" onSubmit={onSubmit}>
+            <input type="hidden" name="subject" value="Nouveau message depuis ton portfolio" />
+            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
             <div className="flex gap-2">
               <label htmlFor="name" className="w-full">
                 name
-                <input
-                  className="w-full  p-2 rounded  mt-2 text-black"
-                  type="text"
-                  name="name"
-                  placeholder="your name"
-                  required
-                />
+                <input className="w-full  p-2 rounded  mt-2 text-black" type="text" name="name" placeholder="your name" required />
               </label>
               <label htmlFor="email" className="w-full">
                 Email
-                <input
-                  className=" w-full p-2 rounded  mt-2 text-black"
-                  type="email"
-                  name="email"
-                  placeholder="your email"
-                  required
-                />
+                <input className=" w-full p-2 rounded  mt-2 text-black" type="email" name="email" placeholder="your email" required />
               </label>
             </div>
             <div>
               <span className="mb-2"> Message</span>
-              <textarea
-                name="message"
-                placeholder="Enter your message"
-                className="w-full mt-2 text-black  p-2"
-                required
-              />
+              <textarea name="message" placeholder="Enter your message" className="w-full mt-2 text-black  p-2" required />
             </div>
 
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="px-4 py-3 text-[#000300] bg-[#52eeca] rounded w-auto disabled:opacity-60"
-            >
-              {status === 'sending' ? 'Sending...' : 'send'}
-            </button>
+            <button type="submit" className="px-4 py-3 text-[#000300] bg-[#52eeca] rounded w-auto"> send </button>
 
-            {status === 'success' && (
-              <p className="text-[#52eeca]">Message sent successfully ✅</p>
-            )}
-            {status === 'error' && (
-              <p className="text-red-400">
-                Something went wrong. Please try again.
-              </p>
-            )}
+            {result && <span className="text-[#52eeca]">{result}</span>}
           </form>
         </div>
       </div>
