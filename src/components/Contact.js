@@ -16,10 +16,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'service_f84khnt',
-        'template_lfr9n77',
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         form.current,
-        'tIh09_Tr03T4ML2y7',
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
       )
       .then(
         (result) => {
@@ -43,23 +43,51 @@ const Contact = () => {
         </div>
         <div className=" flex flex-col  gap-4 py-7 ">
           <div className="flex flex-col justify-center items-center gap-2 px-8 py-8 ">
-            <img src={profile} alt="profile" className="w-[150px] h-[150px] outline outline-2 outline-[#52eeca] rounded-full" />
-            <h4 className="text-2xl xl:text-3xl md:w-[50%] text-center"> Let’s talk about a project, collaboration or an idea you may have</h4>
+            <img
+              src={profile}
+              alt="profile"
+              className="w-[150px] h-[150px] outline outline-2 outline-[#52eeca] rounded-full"
+            />
+            <h4 className="text-2xl xl:text-3xl md:w-[50%] text-center">
+              {' '}
+              Let’s talk about a project, collaboration or an idea you may have
+            </h4>
           </div>
-          <form className="py-8 flex flex-col gap-4 md:w-[60%] mx-auto xl:px-8" ref={form} onSubmit={sendEmail}>
+          <form
+            className="py-8 flex flex-col gap-4 md:w-[60%] mx-auto xl:px-8"
+            ref={form}
+            onSubmit={sendEmail}
+          >
             <div className="flex gap-2">
               <label htmlFor="name" className="w-full">
                 name
-                <input className="w-full  p-2 rounded  mt-2 text-black" type="text" name="user_name" placeholder="your name" required />
+                <input
+                  className="w-full  p-2 rounded  mt-2 text-black"
+                  type="text"
+                  name="user_name"
+                  placeholder="your name"
+                  required
+                />
               </label>
               <label htmlFor="email" className="w-full">
                 Email
-                <input className=" w-full p-2 rounded  mt-2 text-black" type="email" name="user_email" placeholder="your email" required />
+                <input
+                  className=" w-full p-2 rounded  mt-2 text-black"
+                  type="email"
+                  name="user_email"
+                  placeholder="your email"
+                  required
+                />
               </label>
             </div>
             <div>
               <span className="mb-2"> Message</span>
-              <textarea name="message" placeholder="Enter your message" className="w-full mt-2 text-black  p-2" required />
+              <textarea
+                name="message"
+                placeholder="Enter your message"
+                className="w-full mt-2 text-black  p-2"
+                required
+              />
             </div>
 
             <button
@@ -74,7 +102,9 @@ const Contact = () => {
               <p className="text-[#52eeca]">Message sent successfully ✅</p>
             )}
             {status === 'error' && (
-              <p className="text-red-400">Something went wrong. Please try again.</p>
+              <p className="text-red-400">
+                Something went wrong. Please try again.
+              </p>
             )}
           </form>
         </div>
