@@ -20,7 +20,7 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult('Message sent successfully ✅');
+      setResult('Message sent successfully');
       event.target.reset();
     } else {
       console.log('Error', data);
