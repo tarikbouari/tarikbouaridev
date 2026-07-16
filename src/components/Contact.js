@@ -1,26 +1,39 @@
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { MdOutlineContactMail } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
 import profile from '../images/f4.jpg';
 
 const Contact = () => {
   const form = useRef();
-  const clearForm = (e) => {
-    e.preventDefault();
-    window.location.reload();
-  };
+  // status: 'idle' | 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState('idle');
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_f84khnt', 'template_lfr9n77', form.current, 'tIh09_Tr03T4ML2y7')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
+    setStatus('sending');
+
+    emailjs
+      .sendForm(
+        'service_f84khnt',
+        'template_lfr9n77',
+        form.current,
+        'tIh09_Tr03T4ML2y7',
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus('success');
+          form.current.reset(); // reset propre, PAS de window.location.reload()
+        },
+        (error) => {
+          console.log(error.text);
+          setStatus('error');
+        },
+      );
   };
+
   return (
     <div className="w-full py-12 " id="contact">
       <div className="container mx-auto px-12 bg-[#112240] pt-9">
@@ -37,24 +50,35 @@ const Contact = () => {
             <div className="flex gap-2">
               <label htmlFor="name" className="w-full">
                 name
-                <input className="w-full  p-2 rounded  mt-2 text-black" type="text" name="user_name" placeholder="your name" />
+                <input className="w-full  p-2 rounded  mt-2 text-black" type="text" name="user_name" placeholder="your name" required />
               </label>
               <label htmlFor="email" className="w-full">
                 Email
-                <input className=" w-full p-2 rounded  mt-2 text-black" type="email" name="user_email" placeholder="your email" />
+                <input className=" w-full p-2 rounded  mt-2 text-black" type="email" name="user_email" placeholder="your email" required />
               </label>
-
             </div>
             <div>
               <span className="mb-2"> Message</span>
-              <textarea name="message" placeholder="Enter your message" className="w-full mt-2 text-black  p-2" />
+              <textarea name="message" placeholder="Enter your message" className="w-full mt-2 text-black  p-2" required />
             </div>
 
-            <button onClick={clearForm} type="submit" value="send" className="px-4 py-3 text-[#000300] bg-[#52eeca] rounded w-auto"> send </button>
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="px-4 py-3 text-[#000300] bg-[#52eeca] rounded w-auto disabled:opacity-60"
+            >
+              {status === 'sending' ? 'Sending...' : 'send'}
+            </button>
+
+            {status === 'success' && (
+              <p className="text-[#52eeca]">Message sent successfully ✅</p>
+            )}
+            {status === 'error' && (
+              <p className="text-red-400">Something went wrong. Please try again.</p>
+            )}
           </form>
         </div>
       </div>
-
     </div>
   );
 };
